@@ -1,0 +1,14 @@
+---
+layout: layout.njk
+---
+<a class="button" href ="/posts">Back to posts</a>
+<article>
+
+	<header>
+		<h1>{{title}}</h1>
+		<time>{{ date.toLocaleDateString() }}</time>
+	</header>
+	<main>
+		{{ content | safe }}
+	</main>
+</article>

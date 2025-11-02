@@ -1,0 +1,164 @@
+body { 
+	margin: 0;
+	padding: 0;
+	font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
+	
+	h1,h2,h3,h4,h5,h6,nav {
+		font-family: Menlo, Consolas, Monaco, Adwaita Mono, Liberation Mono, Lucida Console, monospace;
+	}
+	
+	p {
+		font-size: 1rem;
+		line-height: 150%;
+	}
+	
+	a:not(.unstyled) {
+		text-decoration: none;
+		background-color: aqua;
+		padding: 0.15rem 0.25rem;
+		
+	}
+	
+	ul {
+		marign: 0;
+		padding: 0; 
+	}
+}
+
+body > header {
+	padding: 1rem 2rem;
+	box-sizing: border-box;
+	border-bottom: 1px solid gray;
+	
+	@media (max-width: 800px) {
+		padding: 1rem 0.5rem;
+	}
+	
+	nav > ul {
+		display: flex;
+		flex-direction: row;
+		gap: 1rem;
+		width: 100%;
+		justify-content: center;
+		list-style: none;
+		font-size: 0.75rem;
+		text-align: center;
+		padding: 0;
+		margin: 0;
+		
+		@media (max-width: 800px) {
+			justify-content: start;
+			flex-wrap: wrap;
+			gap: 0.5rem;
+		}
+	}
+}
+
+body > main {
+	max-width: 800px;
+	width: 100%;
+	padding: 1rem;
+	box-sizing: border-box;
+	margin: 0 auto;
+	min-height: calc(100vh - 100px);
+	
+	ul.collection {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+		
+		li {
+			border-left: 4px solid aqua;
+			padding-left: 0.75rem;
+		}
+	}
+	
+	img {
+		border-radius: 1rem;
+		margin: 1rem 0;
+		max-width: 40%;
+	}
+	
+	article img {
+		max-width: 600px;
+	}
+	
+	article ul {
+		padding: 0 1rem;
+	}
+	
+	article li {
+		margin: 0.5rem 0;
+	}
+	
+	table {
+		display: table;
+	  	border-spacing: 2px;
+	  	border-collapse: separate;
+	  	box-sizing: border-box;
+	  	text-indent: 0;
+		text-align: left;
+		border-collapse: collapse;
+		
+		th,
+		td {
+/* 			border: 1px solid; */
+		}
+		
+		td {
+			padding: 0.25rem;
+		}
+		
+		thead tr {
+			background:  #E3DEDE !important;
+		}
+		
+		tr:nth-child(odd) {
+			background: whitesmoke;
+		}
+	}
+	
+	.mumbles {
+		display: flex;
+		flex-direction: column;
+		list-style: none;
+		gap: 1rem;
+		
+		li {
+			background-color: oldlace;
+			padding: 1rem;
+			margin: 0;
+			
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			time {
+				font-size: 0.75rem;
+				display: block;
+				margin-bottom: 0.25rem;
+			}
+		}
+	}
+}
+
+body > footer {
+	padding: 0.5rem 2rem;
+	border-top: 1px solid gray;
+	font-size: 0.75rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	
+	@media (max-width: 800px) {
+		padding: 1rem 0.5rem;
+	}
+	
+	.links {
+		display: flex;
+		flex-direction: row;
+		gap: 0.5rem;
+	}
+}

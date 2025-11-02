@@ -1,0 +1,49 @@
+---
+title: Home
+layout: layout.njk
+eleventyNavigation:
+  key: Home
+  order: 1
+---
+
+<header style="margin-bottom: 3rem;">
+	<h1>I'm Alex!</h1>
+	<p>
+		Welcome to my place on the net. I write about tech, books and cycling.
+	</p>
+</header>
+
+<section style="margin-bottom: 3rem;">
+	<h3>Last Mumble</h3>
+	<ul class="mumbles">
+	{%- for post in collections.mumbles | reverse -%}
+		{% if (loop.index <= 1) %}
+		  <li>
+				<time>{{post.data.date.toLocaleString() }}</time>
+				{{ post.content | safe }}
+		
+		  </li>
+		{% endif %}
+	{%- endfor -%}
+	</ul>
+</section>
+
+<section style="margin-bottom: 3rem;">
+	<h3>Recent Posts</h3>
+	<ul class="collection">
+	{%- for post in collections.posts | reverse -%}
+		{% if (loop.index <= 5) %}
+			<li>
+				<a href="{{post.url}}">
+					{{ post.data.title }}
+				</a>
+				<br/>
+				<time>{{post.data.date.toLocaleDateString() }}</time>
+			</li>
+		{% endif %}
+	{%- endfor -%}
+	</ul>
+	<div style="margin-top: 2rem">
+		<a href="/posts">View All Posts</a>
+	</div>
+</section>

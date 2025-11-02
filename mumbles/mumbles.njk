@@ -1,0 +1,24 @@
+---
+layout: layout.njk
+eleventyNavigation:
+  key: Mumbles
+  order: 3
+---
+
+<header style="margin-bottom: 3rem;">
+	<h1>Mumbles</h1>
+	<p>Quick, freeform thoughts that don't need a full article.</p>
+</header>
+
+<ul class="mumbles" style="margin-bottom: 3rem;">
+{%- for post in collections.mumbles | reverse -%}
+  <li>
+    	<time>{{post.data.date.toLocaleString() }}</time>
+  		{{ post.content | safe }}
+
+  </li>
+{%- endfor -%}
+</ul>
+
+<a href="/mumbles-feed.xml">Subscribe to mumbles via RSS</a>
+

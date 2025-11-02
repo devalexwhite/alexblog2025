@@ -1,0 +1,20 @@
+---
+layout: layout.njk
+---
+
+
+<a class="button" href ="/reading/books">Back to books</a>
+<article>
+
+	<header>
+		<h1>{{title}}</h1>
+		<div>Author: {{ book_author }}</div>
+		<div>Rating:
+			{% for i in range(0, rating) -%}★{%- endfor %}{% for i in range(0, 5 - rating) -%}☆{%- endfor %}
+		</div>
+		<time>{{ date.toLocaleDateString() }}</time>
+	</header>
+	<main>
+		{{ content | safe }}
+	</main>
+</article>
