@@ -6,12 +6,12 @@ eleventyNavigation:
   order: 1
 ---
 
-<header style="margin-bottom: 3rem;">
-	<h1>I'm Alex!</h1>
-	<p>
-		Welcome to my place on the net. I write about tech, books and cycling.
-	</p>
-</header>
+
+<section style="margin-bottom: 3rem;">
+	<div class="adventure" hx-trigger="load" hx-get="/adventure/1-intro" hx-swap="outerHTML">
+	</div>
+</section>
+
 
 <section style="margin-bottom: 3rem;">
 	<h3>Last Mumble</h3>

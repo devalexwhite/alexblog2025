@@ -1,0 +1,43 @@
+<article class="adventure">
+	<main>
+		{{ content | safe }}
+	</main>
+	<div class="actions">
+		<div></div>
+		<div>
+			{% if north %}
+				<button hx-swap="outerHTML" hx-target="article.adventure" hx-get="/adventure/{{north}}">Go North</button>
+			{% else %}
+				<button disabled>Go North</button>
+			{% endif %}
+		</div>
+		<div></div>
+		
+		<div>
+		{% if west %}
+			<button hx-swap="outerHTML" hx-target="article.adventure" hx-get="/adventure/{{west}}">Go West</button>
+		{% else %}
+			<button disabled>Go West</button>
+		{% endif %}
+		</div>
+		<div></div>
+		<div>
+		{% if east %}
+			<button hx-swap="outerHTML" hx-target="article.adventure" hx-get="/adventure/{{east}}">Go East</button>
+		{% else %}
+			<button disabled>Go East</button>
+		{% endif %}
+		</div>
+		
+		<div></div>
+		<div>
+		{% if south %}
+			<button hx-swap="outerHTML" hx-target="article.adventure" hx-get="/adventure/{{south}}">Go South</button>
+		{% else %}
+			<button disabled>Go South</button>
+		{% endif %}
+		</div>
+		<div></div>
+		
+	</div>
+</article>
