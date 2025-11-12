@@ -4,6 +4,7 @@ layout: adventure.njk
 south: 1-intro
 north: 4-cabin-patio
 east: 5-upstream
+west: 7-tire-swing
 ---
 You stand infront of a small log cabin. There's a rustic, inviting
 quality to the home nestled among the trees. You see a gentle funnel of
