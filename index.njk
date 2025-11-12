@@ -9,13 +9,18 @@ eleventyNavigation:
 
 <section style="margin-bottom: 3rem;">
 	<div class="adventure" hx-trigger="load" hx-get="/adventure/1-intro" hx-swap="outerHTML">
+		<h3>Adventure Game</h3>
+		<p>No JavaScript? No problem!</p>
+		<div>
+			<a href="/adventure/1-intro">Play the game here without JS.</a>
+		</div>
 	</div>
 </section>
 
 
 <section style="margin-bottom: 3rem;">
 	<h3>Last Mumble</h3>
-	<ul class="mumbles">
+	<ul class="mumbles"> 
 	{%- for post in collections.mumbles | reverse -%}
 		{% if (loop.index <= 1) %}
 		  <li>

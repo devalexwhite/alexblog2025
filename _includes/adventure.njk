@@ -1,4 +1,4 @@
-<article class="adventure">
+<article class="adventure" hx-boost="true">
 	<main>
 		{{ content | safe }}
 	</main>
@@ -17,7 +17,7 @@
 		
 		<div>
 		{% if west %}
-			<button hx-swap="outerHTML" hx-target="article.adventure" hx-get="/adventure/{{west}}">Go West</button>
+			<a hx-swap="outerHTML" hx-target="article.adventure" href="/adventure/{{west}}">Go West</a>
 		{% elif west_link %}
 				<a target="_blank" href="{{ west_link }}">Go West (🔗)</a>
 		{% else %}
@@ -27,7 +27,7 @@
 		<div></div>
 		<div>
 		{% if east %}
-			<button hx-swap="outerHTML" hx-target="article.adventure" hx-get="/adventure/{{east}}">Go East</button>
+			<a hx-swap="outerHTML" hx-target="article.adventure" href="/adventure/{{east}}">Go East</a>
 		{% elif east_link %}
 				<a target="_blank" href="{{ east_link }}">Go East (🔗)</a>
 		{% else %}
@@ -38,7 +38,7 @@
 		<div></div>
 		<div>
 		{% if south %}
-			<button hx-swap="outerHTML" hx-target="article.adventure" hx-get="/adventure/{{south}}">Go South</button>
+			<a hx-swap="outerHTML" hx-target="article.adventure" href="/adventure/{{south}}">Go South</a>
 		{% elif south_link %}
 				<a target="_blank" href="{{ south_link }}">Go South (🔗)</a>
 		{% else %}
