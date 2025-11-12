@@ -6,7 +6,7 @@
 		<div></div>
 		<div>
 			{% if north %}
-				<button hx-swap="outerHTML" hx-target="article.adventure" hx-get="/adventure/{{north}}">Go North</button>
+				<a hx-swap="outerHTML" hx-target="article.adventure" href="/adventure/{{north}}">Go North</a>
 			{% elif north_link %}
 				<a target="_blank" href="{{ north_link }}">Go North (🔗)</a>
 			{% else %}
