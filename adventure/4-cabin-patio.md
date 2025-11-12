@@ -14,7 +14,7 @@ holding a cup of coffee with a book under his arm.
 > you!
 
 The man walks over to a rocking chair and takes a seat. He opens up the
-book and takes a sip from his coffee. He looks up at you.
+book and takes a sip from his coffee. A few moments later he looks back at you.
 
 > Forgot to mention, this "adventure" is still a work in progress, so check
 > back now and again to see what's changed.
