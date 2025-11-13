@@ -4,11 +4,19 @@ header="---\ntags: mumbles\ndate: $(date -u +%Y-%m-%dT%H:%M:%SZ)\n---\n"
 
 filename="./mumbles/mumble-$(date +%Y-%m-%dT%H-%M-%S).md"
 
-echo -e $header > $filename
+INSTANCE_URL="https://mas.to"
 
 nano $filename
 
-echo -e '\n\nPosting...\n\n'
+TOOT=cat $filename
+
+echo -e '\n\Tooting...\n\n'
+
+curl ${INSTANCE_URL}/api/v1/statuses -H "Authorization: Bearer $MASTODON_TOKEN" -F "status=${TOOT}"
+
+sed -i "1s;^;$header;" "$filename"
+
+echo -e '\n\Mumbling...\n\n'
 
 ./publish.sh
 
@@ -16,4 +24,4 @@ git add $filename
 git commit -am "Adding mumble"
 git push
 
-echo -e '\n\nThanks for mumbling today.\n\n'
+echo -e '\n\nThanks for mumbling (& tooting) today.\n\n'
