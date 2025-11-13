@@ -4,7 +4,7 @@ header="---\ntags: mumbles\ndate: $(date -u +%Y-%m-%dT%H:%M:%SZ)\n---\n"
 
 filename="./mumbles/mumble-$(date +%Y-%m-%dT%H-%M-%S).md"
 
-INSTANCE_URL="https://mas.to"
+INSTANCE_URL="https://fosstodon.org"
 
 nano $filename
 
@@ -19,9 +19,5 @@ sed -i "1s;^;$header;" "$filename"
 echo -e '\nMumbling...\n\n'
 
 ./publish.sh
-
-git add $filename
-git commit -am "Adding mumble"
-git push
 
 echo -e '\n\nThanks for mumbling (& tooting) today.\n\n'
