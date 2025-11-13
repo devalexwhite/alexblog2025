@@ -8,7 +8,7 @@ INSTANCE_URL="https://mas.to"
 
 nano $filename
 
-TOOT=cat $filename
+TOOT=$(cat $filename)
 
 echo -e '\nTooting...\n\n'
 
