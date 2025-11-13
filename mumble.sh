@@ -12,7 +12,7 @@ TOOT=cat $filename
 
 echo -e '\nTooting...\n\n'
 
-curl ${INSTANCE_URL}/api/v1/statuses -H "Authorization: Bearer $MASTODON_TOKEN" -F "status=$TOOT"
+curl ${INSTANCE_URL}/api/v1/statuses -H "Authorization: Bearer $MASTODON_TOKEN" -F "status=${TOOT}"
 
 sed -i "1s;^;$header;" "$filename"
 
