@@ -10,7 +10,7 @@ I posted a mumble on this site recently about how vibrant the small web is, but 
 
 The easiest to discover category is personal blogs. I'm constantly amazed by how many people run their own blogs and post frequently. Blogs are easily my top go to for learning new things and connecting with interesting people.
 
-You might be asking "how how I discover blogs?", well fear not reader I've got you covered! Some awesome developers in the indie web space have created excellent tools for discovering blogs.
+You might be asking "how do I discover blogs?", well fear not reader I've got you covered! Some awesome developers in the indie web space have created excellent tools for discovering blogs.
 
 ### Blog Discovery Tools
 
