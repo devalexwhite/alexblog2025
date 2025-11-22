@@ -14,7 +14,9 @@ echo -e '\nTooting...\n\n'
 
 curl ${INSTANCE_URL}/api/v1/statuses -H "Authorization: Bearer $MASTODON_TOKEN" -F "status=${TOOT}"
 
-sed -i "1s;^;$header;" "$filename"
+# sed -i "1s;^;$header;" "$filename"
+# Attempting to address platform differences between Mac OS and Linux with sed
+perl -i -pe "s/^/$header/ if $. == 1" "$filename"
 
 echo -e '\nMumbling...\n\n'
 
