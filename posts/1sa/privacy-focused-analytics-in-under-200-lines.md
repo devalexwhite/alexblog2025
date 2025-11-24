@@ -1,0 +1,20 @@
+---
+title: Privacy Focused Analytics in Under 200 Lines of Code
+tags: posts
+layout: article.njk
+date: 2025-11-23T21:39:01Z
+---
+When I launched this blog, I told myself I wouldn't succumb to monitoring analytics. But, curiosity killed the cat and here we are!
+I've built and deployed a privacy focused analytics "platform" for this blog. Best of all, it's under 200 lines of code and requires a single PHP file!
+
+My analytics script (dubbed 1Script Analytics) works by recording a hash of the visitor's IP and date (inspired by [Herman's analytics](https://herman.bearblog.dev/how-bear-does-analytics-with-css/) on Bear Blog). This allows me to count unique visitors in a privacy friendly way.
+The script itself is a single PHP file that does two jobs. When called directly (/analytics.php) it displays a dashboard with traffic data.
+When used in an image tag with the `mode=track` query parameter, it records the visit to a SQLite database and returns an SVG (the 1S Analytics
+badge you see in my footer).
+
+![Screenshot of analytics](/posts/1sa/1sa.png)
+
+That's it, super simple analytics. No cookies, JavaScript or dependencies. Throw it on your server, migrate the database and put a image tag
+in your template file.
+
+Wanna see my live analytics? Click [here](/analytics.php) for the analytics dashboard.
