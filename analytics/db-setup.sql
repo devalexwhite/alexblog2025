@@ -3,6 +3,6 @@ CREATE TABLE IF NOT EXISTS views (
 	ip_date_hash VARCHAR,
 	visit_time DATETIME DEFAULT CURRENT_TIMESTAMP,
 	page VARCHAR,
-	referer VARCHAR NULLABLE,
+	referrer VARCHAR NULLABLE,
 	browser_agent VARCHAR NULLABLE
 );

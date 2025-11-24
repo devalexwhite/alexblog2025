@@ -16,8 +16,8 @@ if (isset($_POST["mode"]) && $_POST["mode"] == "track") {
         $ip = filter_var($_SERVER['REMOTE_ADDR'], FILTER_VALIDATE_IP);
     }
 
-    $path = $_SERVER['HTTP_REFERER'] ?? null;
-    $referer = $_POST['referrer'] ?? null;
+    $path = $_SERVER['HTTP_referrer'];
+    $referrer = $_POST['referrer'];
     $ip_date_hash = md5(date("mdy") . $ip);
     $browser = $_SERVER['HTTP_USER_AGENT'];
 
@@ -29,11 +29,11 @@ if (isset($_POST["mode"]) && $_POST["mode"] == "track") {
         $browser ='Chrome';
     }
 
-    $stmt = $db->prepare("INSERT INTO views (ip_date_hash, visit_time, page, referer, browser_agent) VALUES (:ip, :time, :page, :referer, :browser)");
+    $stmt = $db->prepare("INSERT INTO views (ip_date_hash, visit_time, page, referrer, browser_agent) VALUES (:ip, :time, :page, :referrer, :browser)");
     $stmt->bindValue(':ip', $ip_date_hash);
     $stmt->bindValue(':time', date('Y-m-d H:i:s'));
     $stmt->bindValue(':page', $path);
-    $stmt->bindValue(':referer', $referer);
+    $stmt->bindValue(':referrer', $referrer);
     $stmt->bindValue(':browser', $browser);
 
     $stmt->execute();
@@ -51,9 +51,9 @@ if (isset($_POST["mode"]) && $_POST["mode"] == "track") {
     $stmt->execute();
     $views_by_page = $stmt->fetchAll();
 
-    $stmt = $db->query("SELECT COUNT(ip_date_hash) as cnt, referer FROM views WHERE datetime(visit_time) >= datetime('now', '-7 Day') AND referer IS NOT NULL GROUP BY referer ORDER BY cnt DESC");
+    $stmt = $db->query("SELECT COUNT(ip_date_hash) as cnt, referrer FROM views WHERE datetime(visit_time) >= datetime('now', '-7 Day') AND referrer IS NOT NULL GROUP BY referrer ORDER BY cnt DESC");
     $stmt->execute();
-    $views_by_referer = $stmt->fetchAll();
+    $views_by_referrer = $stmt->fetchAll();
 
     $stmt = $db->query("SELECT COUNT(DISTINCT ip_date_hash) as cnt, browser_agent FROM views WHERE datetime(visit_time) >= datetime('now', '-7 Day') AND browser_agent IS NOT NULL GROUP BY browser_agent ORDER BY cnt DESC");
     $stmt->execute();
@@ -163,9 +163,9 @@ if (isset($_POST["mode"]) && $_POST["mode"] == "track") {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($views_by_referer as $referrer) { ?>
+                        <?php foreach ($views_by_referrer as $referrer) { ?>
                         <tr>
-                            <td><?php echo $referrer['referer'] ?></td>
+                            <td><?php echo $referrer['referrer'] ?></td>
                             <td><?php echo $referrer['cnt'] ?></td>
                         </tr>
                         <?php } ?>
