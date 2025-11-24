@@ -9,6 +9,12 @@
 	</link>
 	<script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js"></script>
 	<title>Alex White | {{ title }}</title>
+
+	<script defer>
+		(function () {
+			fetch(`/analytics.php?mode=track&referrer=${encodeURI(document.referrer)}`);
+		})();
+	</script>
 </head>
 
 <body>
@@ -30,10 +36,6 @@
 					<img src="https://www.barebones.com/images/BuiltWithBBEdit.jpg" alt="Built with BBEdit" border="0">
 				</a>
 			</div>
-			<div>
-				<a href="/posts/privacy-focused-analytics-in-under-200-lines/" class="unstyled">
-					<img src="/analytics.php?mode=track" width="80" height="15">
-				</a>
 		</nav>
 	</footer>
 </body>
