@@ -12,12 +12,12 @@
 
 	<script defer>
 		(function () {
+			var formData = new FormData();
+			formData.append('referrer', document.referrer);
+			formData.append('method', 'track');
 			fetch(`/analytics/index.php`, {
 				method: 'POST',
-				body: JSON.stringify({
-					referrer: document.referrer,
-					method: 'track'
-				})
+				body: formData
 			});
 		})();
 	</script>
