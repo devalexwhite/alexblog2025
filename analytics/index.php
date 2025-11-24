@@ -16,8 +16,8 @@ if (isset($_POST["mode"]) && $_POST["mode"] == "track") {
         $ip = filter_var($_SERVER['REMOTE_ADDR'], FILTER_VALIDATE_IP);
     }
 
-    $path = $_SERVER['HTTP_referrer'];
-    $referrer = $_POST['referrer'];
+    $path = $_POST['page'] ?? null;
+    $referrer = $_POST['referrer'] ?? null;
     $ip_date_hash = md5(date("mdy") . $ip);
     $browser = $_SERVER['HTTP_USER_AGENT'];
 

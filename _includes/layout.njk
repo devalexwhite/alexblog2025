@@ -13,8 +13,12 @@
 	<script defer>
 		(function () {
 			var formData = new FormData();
-			formData.append('referrer', document.referrer);
+			if (document.referrer.indexOf(window.location.hostname) == -1) {
+				formData.append('referrer', document.referrer);
+			}
+			
 			formData.append('mode', 'track');
+			formData.append('page', window.location.pathname);
 			fetch(`/analytics/index.php`, {
 				method: 'POST',
 				body: formData
