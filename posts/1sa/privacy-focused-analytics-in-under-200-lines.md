@@ -16,7 +16,7 @@ When used in an a simple JS function with the `mode=track` query parameter, it r
 That's it, super simple analytics. No cookies, JavaScript frameworks or dependencies. Throw it on your server, migrate the database and put a image tag
 in your template file.
 
-Wanna see my live analytics? Click [here](/analytics.php) for the analytics dashboard.
+Wanna see my live analytics? Click [here](/analytics/index.php) for the analytics dashboard.
 
 ---
 
