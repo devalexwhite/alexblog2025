@@ -17,3 +17,13 @@ That's it, super simple analytics. No cookies, JavaScript frameworks or dependen
 in your template file.
 
 Wanna see my live analytics? Click [here](/analytics.php) for the analytics dashboard.
+
+---
+
+__Update__
+
+Okay I fixed a few things, guess I'm a bit sleep deprived! To properly get the referrer, I switched to JavaScript to call the analytics
+PHP script rather than the image method. I'm using a POST request via `fetch` to pass current page and referrer to PHP. Also updated
+the styling slightly on the dashboard to use a grid layout. Finally, moved my sqlite file into a non-web directory on the server, updated config,
+and bundled the analytics script with my 11ty deployment process. Planning to layer in some simple graphs in the future, but so far pretty happy
+with how things are working!
