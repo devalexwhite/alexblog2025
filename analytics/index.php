@@ -1,6 +1,6 @@
 <?php
 
-$DATABASE_PATH =  "sqlite:/" . __DIR__ . "/database.sqlite";
+$DATABASE_PATH =  "sqlite:/var/data/1sa.sqlite";
 
 
 $db = new PDO($DATABASE_PATH);
