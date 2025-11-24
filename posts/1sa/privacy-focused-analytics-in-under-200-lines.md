@@ -9,12 +9,11 @@ I've built and deployed a privacy focused analytics "platform" for this blog. Be
 
 My analytics script (dubbed 1Script Analytics) works by recording a hash of the visitor's IP and date (inspired by [Herman's analytics](https://herman.bearblog.dev/how-bear-does-analytics-with-css/) on Bear Blog). This allows me to count unique visitors in a privacy friendly way.
 The script itself is a single PHP file that does two jobs. When called directly (/analytics.php) it displays a dashboard with traffic data.
-When used in an image tag with the `mode=track` query parameter, it records the visit to a SQLite database and returns an SVG (the 1S Analytics
-badge you see in my footer).
+When used in an a simple JS function with the `mode=track` query parameter, it records the visit to a SQLite database.
 
 ![Screenshot of analytics](/posts/1sa/1sa.png)
 
-That's it, super simple analytics. No cookies, JavaScript or dependencies. Throw it on your server, migrate the database and put a image tag
+That's it, super simple analytics. No cookies, JavaScript frameworks or dependencies. Throw it on your server, migrate the database and put a image tag
 in your template file.
 
 Wanna see my live analytics? Click [here](/analytics.php) for the analytics dashboard.

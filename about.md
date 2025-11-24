@@ -19,7 +19,7 @@ using older tech in my daily life in an effort to stay away from silicon
 valley crap (I rock an iPod, play PS2/Genesis/GBA frequently, purchase
 physical media, etc).
 
-Outside of tech, I'm a father of 1 (soon to be 2), an avid cyclist and
+Outside of tech, I'm a father of 2, an avid cyclist and
 less avid swimmer. I spend the little free time I have riding, hiking,
 playing with my kid or reading in a park.
 

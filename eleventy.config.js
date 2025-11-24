@@ -20,6 +20,7 @@ export default function (eleventyConfig) {
 
 
 	eleventyConfig.addPassthroughCopy("**/*.jpeg");
+	eleventyConfig.addPassthroughCopy("analytics/**")
 	eleventyConfig.addPassthroughCopy("**/*.webp");
 	eleventyConfig.addPassthroughCopy("**/*.mov");
 	eleventyConfig.addPassthroughCopy("**/*.jpg");
