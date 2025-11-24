@@ -5,7 +5,7 @@ $DATABASE_PATH =  "sqlite:/var/data/1sa.sqlite";
 
 $db = new PDO($DATABASE_PATH);
 
-if (isset($_GET["mode"]) && $_GET["mode"] == "track") {
+if (isset($_POST["mode"]) && $_POST["mode"] == "track") {
     $ip = null;
 
     if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
@@ -17,7 +17,7 @@ if (isset($_GET["mode"]) && $_GET["mode"] == "track") {
     }
 
     $path = $_SERVER['HTTP_REFERER'] ?? null;
-    $referer = $_GET['referrer'] ?? null;
+    $referer = $_POST['referrer'] ?? null;
     $ip_date_hash = md5(date("mdy") . $ip);
     $browser = $_SERVER['HTTP_USER_AGENT'];
 
@@ -63,7 +63,7 @@ if (isset($_GET["mode"]) && $_GET["mode"] == "track") {
 
 ?>
 
-<?php if (isset($_GET["mode"]) && $_GET["mode"] == "track") { ?>
+<?php if (isset($_POST["mode"]) && $_POST["mode"] == "track") { ?>
 <?php } else { ?>
 <html lang="en">
 

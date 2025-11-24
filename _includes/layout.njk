@@ -12,7 +12,13 @@
 
 	<script defer>
 		(function () {
-			fetch(`/analytics/index.php?mode=track&referrer=${encodeURI(document.referrer)}`);
+			fetch(`/analytics/index.php`, {
+				method: 'POST',
+				body: JSON.stringify({
+					referrer: document.referrer,
+					method: 'track'
+				})
+			});
 		})();
 	</script>
 </head>
@@ -37,7 +43,7 @@
 				</a>
 			</div>
 			<div>
-				<a href="/analytics">
+				<a href="/analytics" class="unstyled">
 					<img src="/analytics/1sa.svg" width="80" height="15" alt="">
 				</a>
 			</div>
