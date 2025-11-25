@@ -158,6 +158,7 @@ if (isset($_POST["mode"]) && $_POST["mode"] == "track") {
             display: flex;
             flex-direction: row;
             align-items: flex-end;
+            justify-content: flex-end;
             gap: 0.5rem;
             height: 200px;
             background-color: white;
