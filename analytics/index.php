@@ -213,7 +213,7 @@ if (isset($_POST["mode"]) && $_POST["mode"] == "track") {
                 </div>
                 <div class="legend">
                     <div class="tick">- 7 Days</div>
-                    <div class="tick">Today</div>
+                    <div class="tick" style="text-align: right;">Now</div>
                 </div>
             </details>
 
