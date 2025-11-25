@@ -1,6 +1,7 @@
 <?php
 
 $DATABASE_PATH =  "sqlite:/var/data/1sa.sqlite";
+// $DATABASE_PATH =  "sqlite:./test.sqlite";
 
 
 $db = new PDO($DATABASE_PATH);
@@ -47,6 +48,25 @@ if (isset($_POST["mode"]) && $_POST["mode"] == "track") {
     $stmt = $db->query("SELECT COUNT(DISTINCT ip_date_hash) as cnt FROM views WHERE datetime(visit_time) >= datetime('now', '-7 Day')");
     $u7d = $stmt->fetch()['cnt'];
 
+    $stmt = $db->query("
+        SELECT COUNT(DISTINCT ip_date_hash) as cnt, strftime('%Y-%m-%d', visit_time) as visit_time FROM VIEWS 
+        WHERE datetime(visit_time) >= datetime('now', '-7 day') 
+        GROUP BY strftime('%Y-%m-%d', visit_time) 
+        ORDER BY visit_time ASC
+    ");
+    $stmt->execute();
+    $visitors_by_day = $stmt->fetchAll();
+
+    $max_visitors = max(array_column($visitors_by_day, 'cnt'));
+
+    $visitors_by_day_pct = array_map(function ($v) use ($max_visitors) {
+        if ($v['cnt'] > 0) {
+            return number_format($v['cnt'] / $max_visitors * 100, 2);
+        }
+        return 0;
+    }, $visitors_by_day);
+
+
     $stmt = $db->query("SELECT COUNT(ip_date_hash) as cnt, page FROM views WHERE datetime(visit_time) >= datetime('now', '-7 Day') GROUP BY page ORDER BY cnt DESC");
     $stmt->execute();
     $views_by_page = $stmt->fetchAll();
@@ -74,43 +94,100 @@ if (isset($_POST["mode"]) && $_POST["mode"] == "track") {
     <title>1Script Analytics</title>
 
     <style>
-    details {
-        border: 5px solid gray;
-        width: 100%;
-        padding: 0.5rem;
-        box-sizing: border-box;
-    }
+        header {
+            background-color: #cfcfe1;
+            padding: 0.5rem 1rem;
+            font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+            line-height: 0;
+            width: fit-content; 
+            margin-bottom: 2rem;
 
-    table thead tr td {
-        font-weight: bold;
-    }
-
-    table tr td {
-        padding: 0.25rem;
-    }
-
-    .grid {
-        display: grid;
-        gap: 2rem;
-    }
-
-    @media (min-width: 320px) {
-        .grid {
-            grid-template-columns: repeat(1, 1fr);
+            h1 {
+                font-size: 2rem; 
+                font-weight: 200;
+                font-style: italic;
+            }
         }
-    }
-
-    @media (min-width: 600px) {
-        .grid {
-            grid-template-columns: repeat(2, 1fr);
+        body {
+            background-color: #63639c;
+            padding: 2rem;
         }
-    }
 
-    @media (min-width: 801px) {
-        .grid {
-            grid-template-columns: repeat(3, 1fr);
+        details {
+            box-shadow: 2px 2px 0px black;
+            border-top: 1px solid white;
+            border-left: 1px solid white;
+            width: 100%;
+            padding: 0.5rem;
+            box-sizing: border-box;
+            background-color: #dddddd;
         }
-    }
+
+        table thead tr td {
+            font-weight: bold;
+        }
+
+        table tr td {
+            padding: 0.25rem;
+        }
+
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        @media (min-width: 320px) {
+            .grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        @media (min-width: 600px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 801px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .graph {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            gap: 0.5rem;
+            height: 200px;
+            background-color: white;
+            border: 1px solid black;
+            padding: 0.5rem 0.5rem 0 0.5rem;
+            box-shadow: inset 1px 1px 0 black;
+            margin-bottom: 1rem;
+        }
+
+        .bar {
+            width: 40px;
+            background-color: #02ccff;
+            border-left: 2px solid #66ffff;
+            border-top: 2px solid #66ffff;
+            border-right: 2px solid #0399cc;
+        }
+
+        .legend {
+            width: 100%;
+            display: flex;
+            font-size: 0.75rem;
+            justify-content: space-between;
+            padding: 0 0.5rem;
+            box-sizing: border-box;
+            margin-bottom: 0.5rem;
+
+            .tick {
+                font-weight: bold;
+            }
+        }
     </style>
 </head>
 
@@ -127,6 +204,16 @@ if (isset($_POST["mode"]) && $_POST["mode"] == "track") {
                 </summary>
                 <p><strong><?php echo $u24h; ?></strong> visitor(s) in 24 hours</p>
                 <p><strong><?php echo $u7d; ?></strong> visitor(s) in 7 days</p>
+
+                <div class="graph">
+                    <?php foreach ($visitors_by_day_pct as $pct) { ?>
+                        <div class="bar" style="height: <?php echo $pct ?>%"></div>
+                    <?php } ?>
+                </div>
+                <div class="legend">
+                    <div class="tick">- 7 Days</div>
+                    <div class="tick">Today</div>
+                </div>
             </details>
 
             <details open>
@@ -153,7 +240,7 @@ if (isset($_POST["mode"]) && $_POST["mode"] == "track") {
 
             <details open>
                 <summary>
-                    <strong>📄 Views by Referrer (Past 7 Days)</strong>
+                    <strong>🗣️ Views by Referrer (Past 7 Days)</strong>
                 </summary>
                 <table>
                     <thead>
@@ -165,7 +252,7 @@ if (isset($_POST["mode"]) && $_POST["mode"] == "track") {
                     <tbody>
                         <?php foreach ($views_by_referrer as $referrer) { ?>
                         <tr>
-                            <td><?php echo $referrer['referrer'] ?></td>
+                            <td><?php echo trim($referrer['referrer']) == '' ? 'N/A' : $referrer['referrer'] ?></td>
                             <td><?php echo $referrer['cnt'] ?></td>
                         </tr>
                         <?php } ?>
@@ -175,7 +262,7 @@ if (isset($_POST["mode"]) && $_POST["mode"] == "track") {
 
             <details open>
                 <summary>
-                    <strong>📄 Views by Browser (Past 7 Days)</strong>
+                    <strong>🌎 Views by Browser (Past 7 Days)</strong>
                 </summary>
                 <table>
                     <thead>
