@@ -24,10 +24,11 @@ if (isset($_POST["mode"]) && $_POST["mode"] == "track") {
 
     if (str_contains(strtolower($browser), 'firefox')) {
         $browser = 'Firefox';
-    } elseif (str_contains(strtolower($browser), 'safari')) {
-        $browser = 'Safari';
     } elseif (str_contains(strtolower($browser), 'chrome')) {
         $browser ='Chrome';
+    }
+    elseif (str_contains(strtolower($browser), 'safari')) {
+        $browser = 'Safari';
     }
 
     $stmt = $db->prepare("INSERT INTO views (ip_date_hash, visit_time, page, referrer, browser_agent) VALUES (:ip, :time, :page, :referrer, :browser)");
