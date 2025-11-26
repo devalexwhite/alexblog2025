@@ -254,7 +254,7 @@ if (isset($_POST["mode"]) && $_POST["mode"] == "track") {
                     <tbody>
                         <?php foreach ($views_by_referrer as $referrer) { ?>
                         <tr>
-                            <td><a href="$referrer['referrer']" target="_blank"><?php echo trim($referrer['referrer']) == '' ? 'N/A' : $referrer['referrer'] ?></a></td>
+                            <td><a href="<?php echo $referrer['referrer']; ?>" target="_blank"><?php echo trim($referrer['referrer']) == '' ? 'N/A' : $referrer['referrer'] ?></a></td>
                             <td><?php echo $referrer['cnt'] ?></td>
                         </tr>
                         <?php } ?>
