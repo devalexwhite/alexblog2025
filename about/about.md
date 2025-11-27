@@ -23,7 +23,13 @@ Outside of tech, I'm a father of 2, an avid cyclist and
 less avid swimmer. I spend the little free time I have riding, hiking,
 playing with my kid or reading in a park.
 
-### Contact
+## Get to Know Me
+
+Here's some links to get to know me:
+
+- [What I Use](/about/what-i-use)
+
+## Contact
 
 You can reach me via email at
 [alex.white@hey.com](mailto:alex.white@hey.com). I love having
