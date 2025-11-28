@@ -40,7 +40,7 @@ export default function (eleventyConfig) {
 			base: "https://thatalexguy.dev/",
 			author: {
 				name: "Alex White",
-				email: "alex.white@hey.com", // Optional
+				email: "hi@thatalexguy.dev", // Optional
 			}
 		}
 	});
@@ -58,7 +58,7 @@ export default function (eleventyConfig) {
 			base: "https://thatalexguy.dev/",
 			author: {
 				name: "Alex White",
-				email: "alex.white@hey.com", // Optional
+				email: "hi@thatalexguy.dev", // Optional
 			}
 		}
 	});

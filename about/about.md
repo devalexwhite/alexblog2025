@@ -32,5 +32,5 @@ Here's some links to get to know me:
 ## Contact
 
 You can reach me via email at
-[alex.white@hey.com](mailto:alex.white@hey.com). I love having
+[hi@thatalexguy.dev](mailto:hi@thatalexguy.dev). I love having
 conversations with people, so don't be shy!

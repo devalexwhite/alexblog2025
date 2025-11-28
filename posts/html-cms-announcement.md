@@ -142,5 +142,5 @@ This is a project I'm really passionate about, and I'd love to chat with
 anyone that is interested. Even if your reaction was "ugh that's a
 terrible idea", let's chat. I'm all ears for suggestions, criticism or
 if you want access to an early build. You can reach me at:
-[alex.white@hey.com](mailto:alex.white@hey.com).
+[hi@thatalexguy.dev](mailto:hi@thatalexguy.dev).
 
