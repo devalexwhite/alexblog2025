@@ -9,3 +9,4 @@ Kev Quirk posted on his blog about resurrecting a [2015 iMac with Linux](https:/
 
 ---
 
+
