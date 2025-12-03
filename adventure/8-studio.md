@@ -2,7 +2,7 @@
 tags: adventure
 layout: adventure.njk
 west_link: https://github.com/devalexwhite/
-north_link: mailto:alex.white@hey.com
+north_link: mailto:hi@thatalexguy.dev
 east_link: /adventure/images/atari_tape.webp
 south: 7-tire-swing
 ---

@@ -88,7 +88,7 @@ Admittedly I don't have as many recommendations for this category, but I can get
 
 I hope this article serves as a good starting place for those looking to discover the "hidden" web. I've found so much amazing content and had conversations with some awesome people thanks to the parts of the web most people overlook. 
 
-If you have recommendations for servers or small web services, [shoot them my way](mailto:alex.white@hey.com) and I'll update this list!
+If you have recommendations for servers or small web services, [shoot them my way](mailto:hi@thatalexguy.dev) and I'll update this list!
 
 
 
