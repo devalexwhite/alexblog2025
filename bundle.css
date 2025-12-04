@@ -207,8 +207,12 @@ article.adventure {
 	max-width: 800px;
 	margin: 2rem auto;
 	border: 2px solid lightgray;
-	padding: 0.5rem 1rem;
+	padding: 0.25rem 1rem;
 	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 
 	small {
 		display: block;
@@ -217,7 +221,7 @@ article.adventure {
 	}
 
 	button {
-		width: 100%;
+		width: 200px;
 		padding: 0.5rem;
 		background-color: aqua;
 		text-align: center;

@@ -7,7 +7,7 @@
 	const TICK_RATE = 10;
 	const DRIFT = 1;
 	const SNOWBANK_WIDTH = 50;
-	const SNOWBANK_MAX_HEIGHT = 30;
+	const SNOWBANK_MAX_HEIGHT = 50;
 	const SNOW_COLOR = "#fffafa";
 	const BACKGROUND_COLOR = "#969dff";
 
@@ -63,7 +63,7 @@
 
 			if (particles[i].y > canvas_element.height + particles[i].size) {
 				const x = Math.ceil(particles[i].x / SNOWBANK_WIDTH);
-				const size = Math.ceil(particles[i].size);
+				const size = Math.ceil(particles[i].size / 2);
 				snow_banks[x] = snow_banks[x] ? Math.min(snow_banks[x] + size, SNOWBANK_MAX_HEIGHT) : size;
 				particles.splice(i, 1);
 			}
@@ -80,14 +80,47 @@
 
 			context.beginPath();
 			context.moveTo(0, canvas_element.height - 10);
-			for (var si = 0; si <= canvas_element.width / SNOWBANK_WIDTH; si++) {
+			for (var si = 0; si <= Math.ceil(canvas_element.width / SNOWBANK_WIDTH); si++) {
 			 	context.lineTo(si * SNOWBANK_WIDTH + 1, canvas_element.height - 10 - (snow_banks[si] ?? 0));
-			 	context.lineTo(si * SNOWBANK_WIDTH + SNOWBANK_WIDTH, canvas_element.height - 10 - (snow_banks[si] ?? 0));
+			 	context.lineTo(si * SNOWBANK_WIDTH + (SNOWBANK_WIDTH/2), canvas_element.height - 10 - (snow_banks[si] ?? 0));
 			}
 			context.lineTo(canvas_element.width, canvas_element.height);
 			context.lineTo(0, canvas_element.height);
 			context.fill();
 		}
+
+		draw_snowman(context, SNOWBANK_WIDTH + (SNOWBANK_WIDTH / 2), canvas_element.height - (snow_banks[1] ?? 0));
+	}
+
+	const draw_snowman = (context, x, y) => {
+		context.fillStyle = SNOW_COLOR;
+		context.beginPath();
+		context.arc(x, y - 20, 20, 0, 2 * Math.PI, false);
+		context.fill();
+
+		context.beginPath();
+		context.arc(x, y - 46, 14, 0, 2 * Math.PI, false);
+		context.fill();
+
+		context.beginPath();
+		context.arc(x, y - 66, 10, 0, 2 * Math.PI, false);
+		context.fill()
+
+
+		context.fillStyle = 'black';
+		context.beginPath();
+		context.arc(x - 4, y - 70, 2, 0, 2 * Math.PI, false);
+		context.fill();
+
+		context.beginPath();
+		context.arc(x + 4, y - 70, 2, 0, 2 * Math.PI, false);
+		context.fill();
+
+		context.fillStyle = 'orange';
+		context.beginPath();
+		context.arc(x, y - 64, 2, 0, 2 * Math.PI, false);
+		context.fill();
+
 	}
 
 	let loop_interval;
