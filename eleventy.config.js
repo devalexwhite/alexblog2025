@@ -3,6 +3,7 @@ import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 
 
 export default function (eleventyConfig) {
+	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 	eleventyConfig.addPassthroughCopy("bundle.css");
 	eleventyConfig.addCollection("inProgressBooks", function (collectionsApi) {
 		return collectionsApi.getFilteredByTag("books").filter(function (item) {
@@ -25,6 +26,7 @@ export default function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("**/*.mov");
 	eleventyConfig.addPassthroughCopy("**/*.jpg");
 	eleventyConfig.addPassthroughCopy("**/*.png");
+	eleventyConfig.addPassthroughCopy("scripts/**");
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 	eleventyConfig.addPlugin(feedPlugin, {
 		type: "atom", // or "rss", "json"

@@ -201,3 +201,29 @@ article.adventure {
 		}
 	}
 }
+
+#let-it-snow {
+	width: 100%;
+	max-width: 800px;
+	margin: 2rem auto;
+	border: 2px solid lightgray;
+	padding: 0.5rem 1rem;
+	box-sizing: border-box;
+
+	small {
+		display: block;
+		font-weight: medium;
+		font-style: italic;
+	}
+
+	button {
+		width: 100%;
+		padding: 0.5rem;
+		background-color: aqua;
+		text-align: center;
+		border: none;
+		cursor: pointer;
+		font-size: 1rem;
+		font-weight: bold;
+	}
+}
