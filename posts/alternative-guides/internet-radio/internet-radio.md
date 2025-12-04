@@ -42,6 +42,8 @@ Stations I regularly tune into.
 - [SomaFM](https://somafm.com/)
 - [Radio Paradise](https://www.radioparadise.com/) (I love the main mix and mellow mix)
 - [WOSU](https://www.wosu.org/) (related, [Support Public Media!](https://protectmypublicmedia.org/))
+- [PBS Melbourne](https://www.pbsfm.org.au) (Recommended by a reader)
+- [3RRR Digital](https://www.rrr.org.au) (Recommended by a reader)
 
 ### Take it further
 
