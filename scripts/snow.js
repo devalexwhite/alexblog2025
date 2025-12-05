@@ -13,6 +13,13 @@
 
 	let canvas_element, particles, snow_banks, context;
 
+	addEventListener("resize", (event) => { 
+		if (canvas_element) {
+			canvas_element.width = window.innerWidth;
+			canvas_element.height = window.innerHeight;
+		}
+	});
+
 	const setup = () => {
 		document.getElementsByTagName("body")[0].style.backgroundColor = BACKGROUND_COLOR;
 		canvas_element = document.createElement('canvas');
