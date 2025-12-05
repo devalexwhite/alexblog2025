@@ -96,7 +96,7 @@
 			context.fill();
 		}
 
-		draw_snowman(context, SNOWBANK_WIDTH + (SNOWBANK_WIDTH / 2), canvas_element.height - (snow_banks[1] ?? 0));
+		draw_snowman(context, SNOWBANK_WIDTH + (SNOWBANK_WIDTH / 2) - 20, canvas_element.height - (snow_banks[1] ?? 0));
 	}
 
 	const draw_snowman = (context, x, y) => {
