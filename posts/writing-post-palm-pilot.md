@@ -4,7 +4,7 @@ tags: posts
 layout: article.njk
 date: 2025-12-08T14:53:01Z
 ---
-When I was a kid, I was obsessed with Palm Pilot devices.. Computers that you can carry in your pocket, I mean how cool is that! My parents got me a m1505, and later on a Tungsten E2. I took those devices everywhere! On long car trips, you'd find me in the back of the car playing The Quest or Kyle's Quest. When I was done gaming, I'd fold out my IR keyboard and start programming in C on a fully on-device IDE. I remember writing a stock market "simulation" game on a trip to Virginia., and making my first couple of dollars selling software on PalmDB.
+When I was a kid, I was obsessed with Palm Pilot devices.. Computers that you can carry in your pocket, I mean how cool is that! My parents got me a m1505, and later on a Tungsten E2. I took those devices everywhere! On long car trips, you'd find me in the back of the car playing The Quest or Kyle's Quest. When I was done gaming, I'd fold out my IR keyboard and start programming in C on a fully on-device IDE. I remember writing a stock market "simulation" game on a trip to Virginia, and making my first couple of dollars selling software on PalmDB.
 
 Then smartphones came, and my Palm went into storage to be replaced by a first generation iPhone. The funny thing about the iPhone though, it never fully replaced the functionality of the Palm Pilot. Sure, it had a beautiful screen that you could touch with a finger (as opposed to a stylus), a camera, WiFi and calling, but it was (and still is) a lesser experience in some ways than the Palm. 
 
@@ -22,12 +22,12 @@ I read an article months ago that, until recently, imax still used Palm Pilots t
 
 Now that you've listened to me ramble about my love of these little devices, you might ask yourself "that's cool, but kinda silly, why should I care?". Well reader, here's a few quick hitters on why purchasing a $30 Palm Pilot could be a good idea in 2025(6):
 
-- Focused writing device that doesn't cost $400
+- Focused writing device that [doesn't cost $600+](https://getfreewrite.com/products/freewrite-smart-typewriter-3rd-gen)
 - Great selection of classic games (one of the best solitaire games I've played on any device)
 - Offline life organizer for tasks, contacts and calendars
-- Focused document reader (again that doesn't cost hundreds of dollars)
+- Focused document reader (again that doesn't [cost hundreds of dollars](https://www.amazon.com/dp/B0DWRBVDN6?ref=stf_erd_s_kc_escen_mh11))
 - Control TVs or stereos with the IR blaster
 - Offline music player (although I DO prefer an iPod with Rockbox for this)
 - Voice memos (this is a seriously awesome feature, my T3 has a dedicated button that you hold down to instantly record a memo. I don't think there's a faster way to record thoughts these days. You could even HotSync them, then run some speech to text analysis.....maybe a future article?).
 
-Palm Pilots are another entry in the "forgotten, but not useless" tech category. If you do find yourself going down the Palm rabbit hole, I highly recommend the articles from [[INSERT MASTODON/GEMINI GUY HERE]. Have a favorite Palm OS application or memory you want to share? Send me an email and let's geek out over Palm Pilots!
+Palm Pilots are another entry in the "forgotten, but not useless" tech category. If you do find yourself going down the Palm rabbit hole, I highly recommend the articles from [kelbot](https://fosstodon.org/@kelbot@retro.social) (you'll need a Gemini browser to view, [see my post on Gemini](https://thatalexguy.dev/posts/small-web-discovery) for recommendations) Have a favorite Palm OS application or memory you want to share? Send me an email and let's geek out over Palm Pilots!
