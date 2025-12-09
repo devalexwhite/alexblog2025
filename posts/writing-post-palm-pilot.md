@@ -4,7 +4,7 @@ tags: posts
 layout: article.njk
 date: 2025-12-08T14:53:01Z
 ---
-When I was a kid, I was obsessed with Palm Pilot devices.. Computers that you can carry in your pocket, I mean how cool is that! My parents got me a m1505, and later on a Tungsten E2. I took those devices everywhere! On long car trips, you'd find me in the back of the car playing The Quest or Kyle's Quest. When I was done gaming, I'd fold out my IR keyboard and start programming in C on a fully on-device IDE. I remember writing a stock market "simulation" game on a trip to Virginia, and making my first couple of dollars selling software on PalmDB.
+When I was a kid, I was obsessed with Palm Pilot devices.. Computers that you can carry in your pocket, I mean how cool is that! My parents got me a m105, and later on a Tungsten E2. I took those devices everywhere! On long car trips, you'd find me in the back of the car playing The Quest or Kyle's Quest. When I was done gaming, I'd fold out my IR keyboard and start programming in C on a fully on-device IDE. I remember writing a stock market "simulation" game on a trip to Virginia, and making my first couple of dollars selling software on PalmDB.
 
 Then smartphones came, and my Palm went into storage to be replaced by a first generation iPhone. The funny thing about the iPhone though, it never fully replaced the functionality of the Palm Pilot. Sure, it had a beautiful screen that you could touch with a finger (as opposed to a stylus), a camera, WiFi and calling, but it was (and still is) a lesser experience in some ways than the Palm. 
 
