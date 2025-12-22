@@ -29,29 +29,17 @@
 
 <body>
 	<header>
-	<table>
-	<tr>
-	<td width="20%">
-
 		<nav>
 			{{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
 		</nav>
-		</td>
-		<td width="60%">
-		</td>
-		<td width="20%">
-		<div id="let-it-snow">
-			<button id="toggle-snow">❄ Turn On Snow Effect (JavaScript)</button>
-		</div>
-		</td>
-		</tr>
-		</table>
 	</header>
-	<hr/>
 	<main>
+		<div id="let-it-snow">
+			<p>Transform this webpage into a winter wonderland! <small>May cause performance issues on older hardware</small></p>
+			<button id="toggle-snow">❄ Toggle Snow</button>
+		</div>
 		{{ content | safe }}
 	</main>
-	<hr/>
 	<footer>
 		<div>Created by Alex White in Hilliard, Ohio. No LLMs used in this site, my writing or email replies. You do <strong>not</strong> have permission to train LLMs with content on this site.</div>
 		<nav class="links">
