@@ -1,7 +1,221 @@
-body { 
-	font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
-	max-width: 1200px;
-	margin: 0 auto;
-	
+#fuck-llms {
+	display: none;
 }
 
+body { 
+	font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
+}
+
+body > header {
+	padding: 1rem 2rem;
+	box-sizing: border-box;
+	border-bottom: 1px solid gray;
+	
+	@media (max-width: 800px) {
+		padding: 1rem 0.5rem;
+	}
+	
+	nav > ul {
+		display: flex;
+		flex-direction: row;
+		gap: 1rem;
+		width: 100%;
+		justify-content: center;
+		list-style: none;
+		font-size: 0.75rem;
+		text-align: center;
+		padding: 0;
+		margin: 0;
+		
+		@media (max-width: 800px) {
+			justify-content: start;
+			flex-wrap: wrap;
+			gap: 0.5rem;
+		}
+	}
+}
+
+body > main {
+	max-width: 800px;
+	width: 100%;
+	padding: 1rem;
+	box-sizing: border-box;
+	margin: 0 auto;
+	min-height: calc(100vh - 100px);
+	
+	ul.collection {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+		
+		li {
+			border-left: 4px solid aqua;
+			padding-left: 0.75rem;
+		}
+	}
+	
+	img {
+		border-radius: 1rem;
+		margin: 1rem 0;
+		max-width: 40%;
+	}
+	
+	article img {
+		max-width: 600px;
+	}
+	
+	article ul {
+		padding: 0 1rem;
+	}
+	
+	article li {
+		margin: 0.5rem 0;
+	}
+	
+	blockquote {
+		border-left: 3px gray solid;
+		padding-left: 1rem;
+		margin-left: 0.25rem
+	}
+	
+	table {
+		display: table;
+	  	border-spacing: 2px;
+	  	border-collapse: separate;
+	  	box-sizing: border-box;
+	  	text-indent: 0;
+		text-align: left;
+		border-collapse: collapse;
+		
+		th,
+		td {
+/* 			border: 1px solid; */
+		}
+		
+		td {
+			padding: 0.25rem;
+		}
+		
+		thead tr {
+			background:  #E3DEDE !important;
+		}
+		
+		tr:nth-child(odd) {
+			background: whitesmoke;
+		}
+	}
+	
+	.mumbles {
+		display: flex;
+		flex-direction: column;
+		list-style: none;
+		gap: 1rem;
+		
+		li {
+			background-color: oldlace;
+			padding: 1rem;
+			margin: 0;
+			
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			time {
+				font-size: 0.75rem;
+				display: block;
+				margin-bottom: 0.25rem;
+			}
+		}
+	}
+}
+
+body > footer {
+	padding: 0.5rem 2rem;
+	border-top: 1px solid gray;
+	font-size: 0.75rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+
+	.links {
+		display: flex;
+		flex-direction: row;
+		gap: 0.5rem;
+	}
+	
+	@media (max-width: 800px) {
+		padding: 1rem 0.5rem;
+		font-size: 0.5rem;
+		text-align: center;
+
+		.links {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+}
+
+article.adventure {
+	border: 2px solid lightgray;
+	padding: 0.5rem 1rem;
+	margin: 0 auto;
+	
+	.actions {
+		max-width: 300px;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0.5rem;
+		margin: 2rem auto 0 auto;
+		
+		div {
+			width: 100%;
+			height: 100%;
+		}
+		
+		a,button {
+			width: 100%;
+			background: aqua;
+			border: none;
+			margin: 0;
+			padding: 0.25rem;
+			text-align: center;
+			display: block;
+			font-size: 1rem;
+			font-weight: bold;
+			box-sizing: border-box;
+			cursor: pointer;
+		}
+	}
+}
+
+#let-it-snow {
+	width: 100%;
+	max-width: 800px;
+	margin: 2rem auto;
+	border: 2px solid lightgray;
+	padding: 0.25rem 1rem;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	small {
+		display: block;
+		font-weight: medium;
+		font-style: italic;
+	}
+
+	button {
+		width: 200px;
+		padding: 0.5rem;
+		background-color: aqua;
+		text-align: center;
+		border: none;
+		cursor: pointer;
+		font-size: 1rem;
+		font-weight: bold;
+	}
+}
