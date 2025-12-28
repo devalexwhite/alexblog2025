@@ -110,4 +110,6 @@ This is a long list, I frequently switch between retro consoles to play games wi
 
 ## Other devices
 
-- Palm Pilot Tungsten T (I wrote a [app for Palm](https://github.com/devalexwhite/WeightTracker-PalmOS) a while back )
+- Palm Pilot Tungsten C (my daily driver)
+- Palm Pilot Tungsten T3
+- Palm Pilot Tungsten E
