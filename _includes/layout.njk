@@ -7,7 +7,6 @@
 	<link rel="stylesheet" href="/bundle.css">
 	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🚲</text></svg>">
 	</link>
-	<script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js"></script>
 	<title>Alex White | {{ title }}</title>
 
 	<script defer>
@@ -34,22 +33,21 @@
 		</nav>
 	</header>
 	<main>
-		<div id="let-it-snow">
-			<p>Transform this webpage into a winter wonderland! <small>May cause performance issues on older hardware</small></p>
-			<button id="toggle-snow">❄ Toggle Snow</button>
-		</div>
 		{{ content | safe }}
 	</main>
+
 	<footer>
 		<div>Created by Alex White in Hilliard, Ohio. No LLMs used in this site, my writing or email replies. You do <strong>not</strong> have permission to train LLMs with content on this site.</div>
 		<nav class="links">
-			<div><a href="/feed.xml">Subscribe via RSS</a></div>
-			<div><a href="mailto:hi@thatalexguy.dev">Contact Me</a></div>
-			<div>
-				<a href="/analytics" class="unstyled">
-					<img src="/analytics/1sa.svg" width="80" height="15" alt="">
-				</a>
-			</div>
+			<ul>
+				<li><a href="/feed.xml">Subscribe via RSS</a></li>
+				<li><a href="mailto:hi@thatalexguy.dev">Contact Me</a></li>
+				<li>
+					<a href="/analytics" class="unstyled">
+						<img src="/analytics/1sa.svg" width="80" height="15" alt="">
+					</a>
+				</li>
+			</ul>
 		</nav>
 	</footer>
 	<script src="/scripts/snow.js" defer></script>

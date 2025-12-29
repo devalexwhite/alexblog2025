@@ -6,49 +6,61 @@ eleventyNavigation:
   order: 1
 ---
 
+<section>
+	<header>
+		<h1>Hello friend.</h1>
+	</header>
+	<main>
+		<p>
+			I'm Alex, welcome! Here is where I write about memories, family, (retro) tech and cycling. I also build silly experiments from time to time, and randomly redesign this site.
+		</p>
+		<p>
+			I love meeting new people, so feel free to reach out via <a href="mailto:hi@thatalexguy.dev">email anytime</a>!
+		</p>
+	</main>
+</section>
 
-<section style="margin-bottom: 3rem;">
-	<div class="adventure" hx-trigger="load" hx-get="/adventure/1-intro" hx-swap="outerHTML">
-		<h3>Adventure Game</h3>
-		<p>No JavaScript? No problem!</p>
-		<div>
-			<a href="/adventure/1-intro">Play the game here without JS.</a>
+<section>
+	<header>
+		<h2>Blog posts</h2>
+	</header>
+	<main>
+		<ul class="collection">
+		{%- for post in collections.posts | reverse -%}
+			{% if (loop.index <= 5) %}
+				<li>
+					<a href="{{post.url}}">
+						{{ post.data.title }}
+					</a>
+					<br/>
+					<time>{{post.data.date.toLocaleDateString() }}</time>
+				</li>
+			{% endif %}
+		{%- endfor -%}
+		</ul>
+
+		<div style="margin-top: 2rem">
+			<a href="/posts">View All Posts</a>
 		</div>
-	</div>
+	</main>
+
 </section>
 
+<section>
+	<header>
+		<h2>Last mumble</h2>
+	</header>
 
-<section style="margin-bottom: 3rem;">
-	<h3>Last Mumble</h3>
-	<ul class="mumbles"> 
-	{%- for post in collections.mumbles | reverse -%}
-		{% if (loop.index <= 1) %}
-		  <li>
-				<time>{{post.data.date.toLocaleString() }}</time>
-				{{ post.content | safe }}
-		
-		  </li>
-		{% endif %}
-	{%- endfor -%}
-	</ul>
+	<main>
+		{%- for post in collections.mumbles | reverse -%}
+			{% if (loop.index <= 1) %}
+					{{ post.content | safe }}			
+					<time>
+						{{post.data.date.toLocaleString() }}
+					</time>
+			{% endif %}
+		{%- endfor -%}
+		</ul>
+	</main>
 </section>
 
-<section style="margin-bottom: 3rem;">
-	<h3>Recent Posts</h3>
-	<ul class="collection">
-	{%- for post in collections.posts | reverse -%}
-		{% if (loop.index <= 5) %}
-			<li>
-				<a href="{{post.url}}">
-					{{ post.data.title }}
-				</a>
-				<br/>
-				<time>{{post.data.date.toLocaleDateString() }}</time>
-			</li>
-		{% endif %}
-	{%- endfor -%}
-	</ul>
-	<div style="margin-top: 2rem">
-		<a href="/posts">View All Posts</a>
-	</div>
-</section>

@@ -13,8 +13,8 @@ eleventyNavigation:
 <ul class="mumbles" style="margin-bottom: 3rem;">
 {%- for post in collections.mumbles | reverse -%}
   <li>
-    	<time>{{post.data.date.toLocaleString() }}</time>
   		{{ post.content | safe }}
+    	<time>{{post.data.date.toLocaleString() }}</time>
 
   </li>
 {%- endfor -%}
