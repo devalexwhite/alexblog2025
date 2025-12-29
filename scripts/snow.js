@@ -21,7 +21,7 @@
 	});
 
 	const setup = () => {
-		document.getElementsByTagName("body")[0].style.backgroundColor = BACKGROUND_COLOR;
+		// document.getElementsByTagName("body")[0].style.backgroundColor = BACKGROUND_COLOR;
 		canvas_element = document.createElement('canvas');
 		canvas_element.width = window.innerWidth;
 		canvas_element.id = "snow-canvas";
@@ -138,7 +138,7 @@
 			loop_interval = setInterval(loop, TICK_RATE);
 		}
 		else {
-			document.getElementsByTagName("body")[0].style.backgroundColor = 'white';
+			// document.getElementsByTagName("body")[0].style.backgroundColor = 'white';
 			clearInterval(loop_interval);
 			document.getElementById("snow-canvas").remove();
 			snow_banks = [];

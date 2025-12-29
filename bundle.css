@@ -4,6 +4,10 @@ body {
 	font-family: Optima, Candara, 'Noto Sans', source-sans-pro, sans-serif;
 	font-weight: normal;
 	margin: 32px;
+	
+}
+
+main {
 	max-width: 800px;
 }
 
@@ -16,6 +20,19 @@ a:hover {
 	border-bottom: 1px solid #a2a1fd;
 }
 
+header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	gap: 8px;
+}
+
+nav {
+	width: 100%;
+}
+
 nav ul {
 	display: flex;
 	flex-direction: row;
@@ -24,9 +41,14 @@ nav ul {
 	padding: 0;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 800px) {
 	nav ul {
 		flex-direction: column;
+	}
+
+	header {
+		flex-direction: column-reverse;
+		align-items: flex-start;
 	}
 }
 
