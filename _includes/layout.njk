@@ -28,12 +28,14 @@
 
 <body>
 	<header>
-		<nav>
-			{{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
-		</nav>
-		<button style="font-size: 28px;border: none;background: none;color: white;cursor:pointer;" id="toggle-snow">
-			❄
-		</button>
+		<div class="nav-wrapper">
+			<nav>
+				{{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
+			</nav>
+			<button style="font-size: 28px;border: none;background: none;color: white;cursor:pointer;" id="toggle-snow">
+				❄
+			</button>
+		</div>
 	</header>
 	<main>
 		{{ content | safe }}

@@ -20,7 +20,7 @@ a:hover {
 	border-bottom: 1px solid #a2a1fd;
 }
 
-header {
+header .nav-wrapper {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -46,7 +46,7 @@ nav ul {
 		flex-direction: column;
 	}
 
-	header {
+	header .nav-wrapper {
 		flex-direction: column-reverse;
 		align-items: flex-start;
 	}
