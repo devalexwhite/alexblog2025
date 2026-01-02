@@ -72,3 +72,10 @@ footer {
 ul li {
 	margin: 8px 0;
 }
+
+blockquote {
+	border-left: 1px solid #909090;
+	margin-left: 0px;
+	padding: 2px 20px;
+	font-size: 20px;
+}
