@@ -77,5 +77,10 @@ blockquote {
 	border-left: 1px solid #909090;
 	margin-left: 0px;
 	padding: 2px 20px;
-	font-size: 20px;
+	color: #a8a8a8;
+}
+
+pre > code {
+	max-width: 100%;
+	text-wrap: wrap;
 }
