@@ -1,6 +1,6 @@
 ---
 date: 2026-01-06T13:11:01Z
-tags: post
+tags: posts
 layout: article.njk
 title: Year of Calmness
 ---
