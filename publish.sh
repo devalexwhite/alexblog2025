@@ -14,6 +14,6 @@ npx @11ty/eleventy
 
 echo "⛾ Deploying, grab a coffee"
 
-rsync -az --checksum --delete --omit-dir-times --quiet "./_site/" "root@thatalexguy.dev:/var/www/thatalexguy.dev/"
+rsync -az --checksum --omit-dir-times --quiet "./_site/" "root@thatalexguy.dev:/var/www/thatalexguy.dev/"
 ssh root@thatalexguy.dev -t 'sudo chown www-data:www-data /var/www/thatalexguy.dev/ -R'
 echo "✅ Deployed"

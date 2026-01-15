@@ -153,7 +153,7 @@ if (file_exists($rssFile)) {
         <div class="last-reply">
             <h3>Last Reply</h3>
             <p><?php echo htmlspecialchars($lastReply); ?></p>
-            <div class="reply-count">Total replies: <?php echo $replyCount; ?> (max 50)</div>
+            <div class="reply-count">Total replies: <?php echo $itemsCount - 1; ?> (max 50)</div>
         </div>
 
         <h2>Submit Your Reply</h2>
