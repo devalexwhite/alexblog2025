@@ -21,7 +21,8 @@ export default function (eleventyConfig) {
 
 
 	eleventyConfig.addPassthroughCopy("**/*.jpeg");
-	eleventyConfig.addPassthroughCopy("discurss/**");
+	eleventyConfig.addPassthroughCopy("discurss/*.php");
+	eleventyConfig.addPassthroughCopy("discurss/*.xml");
 	eleventyConfig.addPassthroughCopy("robots.txt");
 	eleventyConfig.addPassthroughCopy("analytics/**")
 	eleventyConfig.addPassthroughCopy("**/*.webp");
