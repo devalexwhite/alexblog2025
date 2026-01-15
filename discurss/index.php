@@ -8,18 +8,17 @@ $replyCount = 0;
 if (file_exists($rssFile)) {
     $xml = simplexml_load_file($rssFile);
     $items = $xml->channel->item;
+    $itemsCount = count($items);
 
-    if (count($items) > 0) {
+    if ($itemsCount > 0) {
         // First item is the current topic
         $currentTopic = (string) $items[0]->title;
 
-        // Count all items (including the topic as an item)
-        $replyCount = count($items) - 1;
 
         // Last reply is the second item (index 1)
-        if ($replyCount >= 1) {
-            $lastReply = (string) $items[$replyCount]->description;
-            $lastAuthor = (string) $items[$replyCount]->author;
+        if ($itemsCount > 1) {
+            $lastReply = (string) $items[$itemsCount - 1]->description;
+            $lastAuthor = (string) $items[$itemsCount - 1]->author;
             $lastReply = $lastAuthor . ': ' . $lastReply;
         }
     }
