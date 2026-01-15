@@ -11,7 +11,7 @@ export default function (eleventyConfig) {
 			return item.data.status == "reading";
 		});
 	});
-	
+
 	eleventyConfig.addCollection("finishedBooks", function (collectionsApi) {
 		return collectionsApi.getFilteredByTag("books").filter(function (item) {
 			// Side-step tags and do your own filtering
@@ -21,6 +21,7 @@ export default function (eleventyConfig) {
 
 
 	eleventyConfig.addPassthroughCopy("**/*.jpeg");
+	eleventyConfig.addPassthroughCopy("discurss/**");
 	eleventyConfig.addPassthroughCopy("robots.txt");
 	eleventyConfig.addPassthroughCopy("analytics/**")
 	eleventyConfig.addPassthroughCopy("**/*.webp");
