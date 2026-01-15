@@ -32,109 +32,109 @@ if (file_exists($rssFile)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DiscuRSS - Submit Reply</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
+    body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+    }
 
-        .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+    .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
 
-        h1 {
-            color: #333;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
-        }
+    h1 {
+        color: #333;
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 10px;
+    }
 
-        .topic-section {
-            background-color: #e8f4f8;
-            padding: 15px;
-            border-left: 4px solid #007bff;
-            margin-bottom: 20px;
-            border-radius: 3px;
-        }
+    .topic-section {
+        background-color: #e8f4f8;
+        padding: 15px;
+        border-left: 4px solid #007bff;
+        margin-bottom: 20px;
+        border-radius: 3px;
+    }
 
-        .last-reply {
-            background-color: #f0f0f0;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 3px;
-            font-size: 14px;
-        }
+    .last-reply {
+        background-color: #f0f0f0;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 3px;
+        font-size: 14px;
+    }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+    .form-group {
+        margin-bottom: 15px;
+    }
 
-        label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-            color: #333;
-        }
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #333;
+    }
 
-        textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            box-sizing: border-box;
-            resize: vertical;
-            min-height: 120px;
-        }
+    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        box-sizing: border-box;
+        resize: vertical;
+        min-height: 120px;
+    }
 
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-            font-size: 14px;
-            box-sizing: border-box;
-        }
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
 
-        .char-count {
-            font-size: 12px;
-            color: #666;
-            margin-top: 3px;
-        }
+    .char-count {
+        font-size: 12px;
+        color: #666;
+        margin-top: 3px;
+    }
 
-        button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-            font-size: 16px;
-        }
+    button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 16px;
+    }
 
-        button:hover {
-            background-color: #0056b3;
-        }
+    button:hover {
+        background-color: #0056b3;
+    }
 
-        .error {
-            color: #d32f2f;
-            padding: 10px;
-            background-color: #ffebee;
-            border-left: 4px solid #d32f2f;
-            margin-bottom: 15px;
-            border-radius: 3px;
-        }
+    .error {
+        color: #d32f2f;
+        padding: 10px;
+        background-color: #ffebee;
+        border-left: 4px solid #d32f2f;
+        margin-bottom: 15px;
+        border-radius: 3px;
+    }
 
-        .reply-count {
-            color: #666;
-            font-size: 14px;
-            margin-top: 10px;
-        }
+    .reply-count {
+        color: #666;
+        font-size: 14px;
+        margin-top: 10px;
+    }
     </style>
 </head>
 
@@ -151,9 +151,11 @@ if (file_exists($rssFile)) {
         </div>
 
         <div class="last-reply">
-            <h3>Last Reply</h3>
+            <h3>Latest Reply</h3>
             <p><?php echo htmlspecialchars($lastReply); ?></p>
             <div class="reply-count">Total replies: <?php echo $itemsCount - 1; ?> (max 50)</div>
+
+            <a href="https://thatalexguy.dev/discurss/rss.xml" style="margin-top: 10px;display: block;">View entire discussion</a>
         </div>
 
         <h2>Submit Your Reply</h2>
@@ -175,18 +177,18 @@ if (file_exists($rssFile)) {
     </div>
 
     <script>
-        const nameInput = document.getElementById('displayName');
-        const commentInput = document.getElementById('comment');
-        const nameCount = document.getElementById('nameCount');
-        const commentCount = document.getElementById('commentCount');
+    const nameInput = document.getElementById('displayName');
+    const commentInput = document.getElementById('comment');
+    const nameCount = document.getElementById('nameCount');
+    const commentCount = document.getElementById('commentCount');
 
-        nameInput.addEventListener('input', () => {
-            nameCount.textContent = nameInput.value.length;
-        });
+    nameInput.addEventListener('input', () => {
+        nameCount.textContent = nameInput.value.length;
+    });
 
-        commentInput.addEventListener('input', () => {
-            commentCount.textContent = commentInput.value.length;
-        });
+    commentInput.addEventListener('input', () => {
+        commentCount.textContent = commentInput.value.length;
+    });
     </script>
 </body>
 
