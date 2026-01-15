@@ -55,8 +55,8 @@ $rssFile = __DIR__ . '/rss.xml';
 // Create new RSS with single topic entry
 $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel></channel></rss>');
 
-$xml->channel->addChild('title', 'Daily RSS Discussion');
-$xml->channel->addChild('link', 'http://thatalexguy.dev/discurss');
+$xml->channel->addChild('title', 'DiscuRSS Discussion Feed');
+$xml->channel->addChild('link', 'https://thatalexguy.dev/discurss');
 $xml->channel->addChild('description', 'Topic based discussion entirely in RSS');
 $xml->channel->addChild('language', 'en-us');
 
@@ -65,7 +65,8 @@ $newItem = $xml->channel->addChild('item');
 $newItem->addChild('title', htmlspecialchars($topic));
 $newItem->addChild('author', 'Admin');
 $newItem->addChild('pubDate', gmdate('D, d M Y H:i:s T'));
-$newItem->addChild('description', 'New topic posted');
+$newItem->addChild('description', 'New topic posted! Join the discussion at https://thatalexguy.dev/discurss');
+$newItem->addChild('link', 'https://thatalexguy.dev/discurss');
 
 // Save RSS
 $xml->asXML($rssFile);

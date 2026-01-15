@@ -49,6 +49,7 @@ $newItem->addChild('title', 'RE: ' . htmlspecialchars($topicTitle));
 $newItem->addChild('author', htmlspecialchars($displayName));
 $newItem->addChild('pubDate', gmdate('D, d M Y H:i:s T'));
 $newItem->addChild('description', htmlspecialchars($comment));
+$newItem->addChild('link', 'https://thatalexguy.dev/discurss');
 
 // Keep only the topic (first item) plus last 50 replies
 $itemsArray = $xml->channel->item;

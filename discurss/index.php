@@ -143,6 +143,8 @@ if (file_exists($rssFile)) {
     <div class="container">
         <h1>DiscuRSS</h1>
         <p>The only RSS based discussion thread on the net (<i>probably</i>).</p>
+        <p>Subscribe to the <a href="https://thatalexguy/discurss/rss.xml">RSS feed</a> to watch the discussion and
+            be alerted when a new topic is posted!</p>
 
         <div class="topic-section">
             <h2>Today's Topic</h2>
