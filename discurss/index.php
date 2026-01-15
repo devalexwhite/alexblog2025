@@ -17,9 +17,9 @@ if (file_exists($rssFile)) {
         $replyCount = count($items) - 1;
 
         // Last reply is the second item (index 1)
-        if (count($items) > 1) {
-            $lastReply = (string) $items[1]->description;
-            $lastAuthor = (string) $items[1]->author;
+        if ($replyCount > 1) {
+            $lastReply = (string) $items[$replyCount - 1]->description;
+            $lastAuthor = (string) $items[$replyCount - 1]->author;
             $lastReply = $lastAuthor . ': ' . $lastReply;
         }
     }
