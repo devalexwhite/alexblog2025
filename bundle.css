@@ -4,7 +4,7 @@ body {
 	font-family: Optima, Candara, 'Noto Sans', source-sans-pro, sans-serif;
 	font-weight: normal;
 	margin: 32px;
-	
+
 }
 
 main {
@@ -56,6 +56,28 @@ section {
 	margin-bottom: 32px;
 }
 
+article main figure {
+	width: 100%;
+	box-sizing: border-box;
+	margin: 3rem 0;
+	padding: 0.25rem;
+	max-width: 400px;
+	position: relative;
+}
+
+article main figure img {
+	border-radius: 0.5rem;
+	margin-bottom: 0.5rem;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+article main figure figcaption {
+	text-align: center;
+	width: 100%;
+	font-size: 0.75rem;
+}
+
 time {
 	font-size: 12px;
 	color: #7f7f7f;
@@ -80,7 +102,7 @@ blockquote {
 	color: #a8a8a8;
 }
 
-pre > code {
+pre>code {
 	max-width: 100%;
 	text-wrap: wrap;
 }

@@ -2,18 +2,18 @@ import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 
 
-export default function (eleventyConfig) {
+export default function(eleventyConfig) {
 	eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 	eleventyConfig.addPassthroughCopy("bundle.css");
-	eleventyConfig.addCollection("inProgressBooks", function (collectionsApi) {
-		return collectionsApi.getFilteredByTag("books").filter(function (item) {
+	eleventyConfig.addCollection("inProgressBooks", function(collectionsApi) {
+		return collectionsApi.getFilteredByTag("books").filter(function(item) {
 			// Side-step tags and do your own filtering
 			return item.data.status == "reading";
 		});
 	});
 
-	eleventyConfig.addCollection("finishedBooks", function (collectionsApi) {
-		return collectionsApi.getFilteredByTag("books").filter(function (item) {
+	eleventyConfig.addCollection("finishedBooks", function(collectionsApi) {
+		return collectionsApi.getFilteredByTag("books").filter(function(item) {
 			// Side-step tags and do your own filtering
 			return item.data.status == "finished";
 		});
@@ -22,7 +22,6 @@ export default function (eleventyConfig) {
 
 	eleventyConfig.addPassthroughCopy("**/*.jpeg");
 	eleventyConfig.addPassthroughCopy("discurss/*.php");
-	eleventyConfig.addPassthroughCopy("discurss/*.xml");
 	eleventyConfig.addPassthroughCopy("robots.txt");
 	eleventyConfig.addPassthroughCopy("analytics/**")
 	eleventyConfig.addPassthroughCopy("**/*.webp");
@@ -36,7 +35,7 @@ export default function (eleventyConfig) {
 		outputPath: "/mumbles-feed.xml",
 		collection: {
 			name: "mumbles", // iterate over `collections.posts`
-			limit: 0,     // 0 means no limit
+			limit: 0, // 0 means no limit
 		},
 		metadata: {
 			language: "en",
@@ -54,7 +53,7 @@ export default function (eleventyConfig) {
 		outputPath: "/feed.xml",
 		collection: {
 			name: "posts", // iterate over `collections.posts`
-			limit: 0,     // 0 means no limit
+			limit: 0, // 0 means no limit
 		},
 		metadata: {
 			language: "en",
