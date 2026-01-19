@@ -5,17 +5,19 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/bundle.css">
+	<!-- 100% privacy-first analytics -->
+	<script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🚲</text></svg>">
 	</link>
 	<title>Alex White | {{ title }}</title>
 
 	<script defer>
-		(function () {
+		(function() {
 			var formData = new FormData();
 			if (document.referrer.indexOf(window.location.hostname) == -1) {
 				formData.append('referrer', document.referrer);
 			}
-			
+
 			formData.append('mode', 'track');
 			formData.append('page', window.location.pathname);
 			fetch(`/analytics/index.php`, {
