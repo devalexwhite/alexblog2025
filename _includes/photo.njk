@@ -1,0 +1,19 @@
+---
+layout: layout.njk
+---
+<article>
+	<header>
+		<h1>{{title}}</h1>
+		<details>
+			<p id="location">{{location}}</p>
+			<time id="datetime">{{ date.toLocaleDateString() }}</time>
+		</details>
+	</header>
+	<main>
+		<img src="{{photo}}" alt="{{photo_alt}}">
+		<div id="placard">
+			{{ content | safe }}
+		</div>
+		<a href="/posts" style="margin-top: 3rem;">Back to posts</a>
+	</main>
+</article>

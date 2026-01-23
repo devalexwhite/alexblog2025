@@ -1,0 +1,12 @@
+{
+  "actions" : {
+    "clean" : {
+      "enabled" : true,
+      "script" : "#!\/bin\/sh\nrm -rf _site"
+    },
+    "run" : {
+      "enabled" : true,
+      "path" : "preview.sh"
+    }
+  }
+}
